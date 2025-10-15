@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Muneesh27.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Muneesh27.github.io/case-studies/lakeside-manor-revival/</loc>
+    <loc>http://localhost:1313/case-studies/lakeside-manor-revival/</loc>
     <lastmod>2025-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Muneesh27.github.io/case-studies/mountain-view-estate/</loc>
+    <loc>http://localhost:1313/case-studies/mountain-view-estate/</loc>
     <lastmod>2025-08-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Muneesh27.github.io/case-studies/coastal-haven-transformation/</loc>
+    <loc>http://localhost:1313/case-studies/coastal-haven-transformation/</loc>
     <lastmod>2025-06-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Muneesh27.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>https://Muneesh27.github.io/case-studies/</loc>
+    <loc>http://localhost:1313/case-studies/</loc>
   </url><url>
-    <loc>https://Muneesh27.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://Muneesh27.github.io/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
   </url><url>
-    <loc>https://Muneesh27.github.io/team/</loc>
+    <loc>http://localhost:1313/team/</loc>
   </url><url>
-    <loc>https://Muneesh27.github.io/services/</loc>
+    <loc>http://localhost:1313/services/</loc>
   </url><url>
-    <loc>https://Muneesh27.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>
