@@ -1,0 +1,1024 @@
+/* --- Variables & Global Styles --- */
+:root {
+    /* Light Theme */
+    --primary-color: #c0a87a;
+    --dark-blue: #232b3e;
+    --text-color: #555;
+    --text-muted-color: #6c757d;
+    --bg-main: #ffffff;      /* Main body background for light mode */
+    --bg-light: #f9f9f9;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --heading-color: #232b3e;
+    --btn-primary-text: #ffffff;
+    --footer-text-color: #ccc;
+    --input-bg-color: #f0f0f0;
+    --input-border-color: #e0e0e0;
+    --input-text-color: #333;
+}
+
+/* Dark Theme Overrides */
+[data-bs-theme="dark"] {
+    --text-color: #eaf2f9;
+    --text-muted-color: #89929d;
+    --bg-main: #1e2639;      /* Main body background for dark mode */
+    --bg-light: #2c354a;
+    --card-bg: #2a3348;
+    --border-color: #3b455b;
+    --heading-color: #ffffff;
+    --footer-text-color: #adb5bd;
+    --input-bg-color: #3b455b;
+    --input-border-color: #4a546d;
+    --input-text-color: #ffffff;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* UPDATED FONT */
+  margin: 0;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--bg-light); /* Apply to body */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+        font-family: 'Playfair Display', Georgia, serif; /* UPDATED FONT */
+
+  font-weight: 600; /* Slightly bolder for headings */
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+/* Ensure Bootstrap headings also use our colors */
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+        font-family: 'Playfair Display', Georgia, serif; /* UPDATED FONT */
+
+  color: var(--heading-color);
+  font-weight: 700; /* Extra bold for display headings */
+}
+
+p {
+  margin-bottom: 1rem;
+}
+a {
+  text-decoration: none;
+}
+
+/* --- Utility Classes --- */
+.section-padding {
+  padding: 50px 0;
+} /* Increased padding for more breathing room */
+.text-primary-custom {
+  color: var(--primary-color) !important;
+}
+.bg-dark-blue {
+  background-color: var(--dark-blue) !important;
+}
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.7) !important;
+} /* Lighter white text */
+
+/* --- Buttons --- */
+.btn-custom-primary {
+  background-color: var(--primary-color);
+  color: var(--btn-primary-text);
+  border: 2px solid var(--primary-color);
+  padding: 12px 28px; /* Slightly more padding */
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  letter-spacing: 0.5px; /* Added letter spacing */
+}
+.btn-custom-primary:hover {
+  background-color: #a9946b; /* Slightly darker hover */
+  border-color: #a9946b;
+  color: var(--btn-primary-text);
+}
+.btn-custom-outline {
+  background-color: transparent;
+  color: white; /* Default for dark background */
+  border: 2px solid white;
+  padding: 12px 28px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+.btn-custom-outline:hover {
+  background-color: white;
+  color: var(--dark-blue); /* Dark text on white hover */
+  border-color: white;
+}
+
+/* Specific outline button for CTA (homepage and footer) */
+.btn-cta-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.btn-cta-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+[data-bs-theme="dark"] .btn-cta-outline {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+[data-bs-theme="dark"] .btn-cta-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* --- Header --- */
+.navbar {
+  padding: 18px 0; /* More vertical padding */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for definition */
+}
+.navbar-brand img {
+  height: 32px;
+} /* Logo size adjusted */
+.navbar-nav .nav-link {
+  color: #fff; /* White for dark blue header */
+  font-weight: 500;
+  margin-right: 25px; /* More spacing between links */
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color);
+}
+.navbar-dark .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+.navbar-dark .btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Hero Sections (General) --- */
+.hero-section {
+  position: relative;
+  color: white;
+  background-size: cover;
+  background-position: center center; /* Ensure it's perfectly centered */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 55vh; /* Default height */
+  padding-top: 100px; /* Space for fixed header */
+}
+.hero-section .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    35,
+    43,
+    62,
+    0.65
+  ); /* Slightly stronger dark blue overlay */
+  transition: background-color 0.3s ease;
+}
+[data-bs-theme="dark"] .hero-section .hero-overlay {
+  background-color: rgba(0, 0, 0, 0.75); /* Darker overlay for dark mode */
+}
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.hero-section h1 {
+  color: white;
+  font-size: 3.5rem; /* Larger hero title */
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-align: center;
+}
+.hero-section p.lead {
+  max-width: 650px; /* Wider lead text */
+  margin: 0 auto 35px auto;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+.hero-section .btn-custom-primary {
+  background-color: white;
+  color: var(--dark-blue);
+  border-color: white;
+}
+.hero-section .btn-custom-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* --- Homepage Hero Specific --- */
+.homepage-hero {
+  min-height: 80vh; /* Taller hero for homepage */
+}
+.homepage-hero-content {
+  text-align: left; /* Aligns text left as in Image 1 */
+  padding-bottom: 50px; /* Push content up slightly */
+}
+.homepage-hero-content h1 {
+  max-width: 580px;
+}
+.homepage-hero-content p {
+  max-width: 650px;
+}
+
+/* --- Collaboration Section --- */
+.collaboration-section {
+  text-align: center;
+  background-color: var(--card-bg); /* Matches design */
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--border-color); /* Divider line */
+}
+.collaboration-section .h6 {
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.collaboration-section h2 {
+  font-size: 2.8rem; /* Match image */
+  margin-bottom: 25px;
+}
+.collaboration-section .lead {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+/* --- Meet the Team - Collaboration Gallery --- */
+.collaboration-gallery img {
+    border-radius: 8px;
+    object-fit: cover; /* Prevents images from stretching */
+    width: 100%;
+}
+
+.collaboration-gallery .tall-image {
+    height: 450px; /* Adjust this value if needed */
+}
+
+.collaboration-gallery .short-image {
+    height: 217px; /* Roughly half of the tall image height, minus the gap */
+}
+
+@media (max-width: 767.98px) {
+    .collaboration-gallery .tall-image {
+        height: 300px;
+    }
+    .collaboration-gallery .short-image {
+        height: 142px;
+    }
+}
+
+/* --- Pathways Section --- */
+.pathways-section {
+  background-color: var(--bg-light); /* Matches body background */
+  transition: background-color 0.3s ease;
+  padding-bottom: 60px; /* Slightly less padding at bottom */
+}
+.pathways-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); /* Stronger shadow */
+  text-align: left;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.pathways-card i {
+  font-size: 3em; /* Larger icon */
+  color: var(--primary-color);
+  margin-bottom: 25px; /* More spacing */
+  display: block;
+}
+.pathways-card h3 {
+  font-size: 1.7em; /* Match design */
+  margin-bottom: 12px;
+}
+.pathways-card p {
+  font-size: 0.95em;
+  color: var(--text-color);
+}
+
+/* --- Wealth Section --- */
+.wealth-section {
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+.wealth-section .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(1fr); /* 2 columns for thumbs below main */
+  gap: 15px;
+}
+.wealth-section .image-gallery img {
+  border-radius: 8px;
+  object-fit: cover;
+  width: 100%;
+  filter: brightness(0.98); /* Slightly less bright for a softer look */
+}
+[data-bs-theme="dark"] .wealth-section .image-gallery img {
+  filter: brightness(0.8); /* Darker images in dark mode */
+}
+.wealth-section .main-image {
+  grid-column: 1 / -1; /* Spans all columns */
+  height: 380px; /* Fixed height for main image */
+}
+.wealth-section .thumb-image {
+  height: 180px; /* Fixed height for thumb images */
+}
+.wealth-section .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wealth-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+}
+.wealth-section .lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+//* --- CTA Section --- */
+.cta-section {
+  background-color: var(--dark-blue);
+  color: white;
+  text-align: center;
+}
+.cta-section h2 {
+  color: white; /* THIS IS THE FIX - It must always be white */
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.cta-section .lead {
+  max-width: 800px;
+  margin: 0 auto 35px auto;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Stats Section --- */
+.stats-section {
+  background-color: var(--card-bg); /* Matches the CTA section color */
+  color: #4a5568;
+  text-align: center;
+  padding: 70px 0 !important; /* Less padding than other sections */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+}
+.stats-section h3 {
+  color: #4a5568;
+  font-size: 3.2em; /* Larger stat numbers */
+  margin-bottom: 5px;
+  line-height: 1;
+}
+.stats-section p {
+  font-weight: 500; /* Slightly less bold */
+  font-size: 0.9em;
+  margin-bottom: 0;
+  color: #4a5568 !important;
+}
+
+/* --- About Us Page Specific --- */
+.about-intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.core-value-card {
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  height: 100%;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.core-value-card i {
+  font-size: 2.8em; /* Slightly larger icon */
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+.core-value-card h3 {
+  font-weight: 700; /* Bold heading */
+}
+.experience-stats .h3 {
+  font-size: 3em;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  line-height: 1;
+}
+.experience-stats .p {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* --- Meet The Team Page Specific --- */
+.team-member-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.team-member-card img {
+  height: 300px; /* Consistent image height */
+  object-fit: cover;
+}
+.team-member-card .card-body {
+  padding: 30px;
+}
+.team-member-card .card-title {
+  color: var(--heading-color);
+  font-weight: 700;
+  font-size: 1.7em;
+  margin-bottom: 5px;
+}
+.team-member-card .text-primary-custom {
+  font-weight: 600;
+  font-size: 1.1em;
+  display: block; /* Ensures it takes full line */
+  margin-bottom: 15px;
+}
+.team-member-card .card-text {
+  font-size: 0.95em;
+  color: var(--text-color);
+}
+.team-intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.collaboration-excellence-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.collaboration-excellence-text .lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* --- Contact Page Specific --- */
+.contact-hero-text {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.contact-info-block {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px; /* More spacing */
+}
+.contact-info-block i {
+  font-size: 1.8em; /* Larger icon */
+  color: var(--primary-color);
+  margin-right: 20px;
+  min-width: 30px;
+  text-align: center;
+}
+.contact-info-block p {
+  margin-bottom: 0;
+  font-size: 1.05em;
+}
+.contact-info-block p.fw-bold {
+  color: var(--heading-color);
+}
+.office-hours-table {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.05em;
+}
+.office-hours-table td {
+  padding-bottom: 12px;
+}
+.office-hours-table td:first-child {
+  font-weight: bold;
+  color: var(--heading-color);
+}
+.contact-form-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+  padding: 40px;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.contact-form-card .form-control {
+  background-color: var(--input-bg-color); /* Themed input background */
+  border: 1px solid var(--input-border-color);
+  padding: 14px;
+  color: var(--input-text-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+}
+.contact-form-card .form-control::placeholder {
+  color: rgba(var(--input-text-color), 0.7); /* Themed placeholder */
+}
+.contact-form-card .form-label {
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 8px; /* Spacing for label */
+}
+.contact-form-card .btn-custom-primary {
+  width: 100%;
+  padding: 14px;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background-color: var(--dark-blue);
+  color: var(--footer-text-color);
+  padding-top: 70px; /* More padding */
+  padding-bottom: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.site-footer h5 {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+.site-footer ul li {
+  margin-bottom: 10px;
+}
+.site-footer ul li a {
+  color: var(--footer-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.site-footer ul li a:hover {
+  color: var(--primary-color);
+}
+.site-footer .footer-logo {
+  max-height: 40px;
+  margin-bottom: 25px;
+}
+.site-footer .social-icons a {
+  color: var(--footer-text-color);
+  margin-right: 20px;
+  font-size: 1.3em; /* Slightly larger social icons */
+  transition: color 0.3s ease;
+}
+.site-footer .social-icons a:hover {
+  color: var(--primary-color);
+}
+.site-footer .contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+.site-footer .contact-info-item i {
+  font-size: 1.2em;
+  color: var(--primary-color);
+  margin-right: 18px;
+  min-width: 20px;
+  text-align: center;
+}
+.site-footer .contact-info-item span {
+  color: var(--footer-text-color);
+  font-size: 0.95em;
+}
+.site-footer .footer-bottom {
+  text-align: center;
+  padding: 25px 0 0;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Lighter border for dark blue */
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: var(--dark-blue);
+    padding: 15px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .hero-section h1 {
+    font-size: 2.8rem;
+  }
+  .hero-section p.lead {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .homepage-hero-content {
+    text-align: center; /* Center content on smaller screens */
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
+  .homepage-hero-content h1,
+  .homepage-hero-content p {
+    max-width: none;
+  }
+  .collaboration-section h2,
+  .wealth-section h2,
+  .cta-section h2,
+  .contact-page h2 {
+    font-size: 2.2rem;
+  }
+  .section-padding {
+    padding: 60px 0;
+  }
+  .wealth-section .image-gallery {
+    grid-template-columns: 1fr; /* Stack images on small screens */
+  }
+  .wealth-section .main-image {
+    height: 300px;
+  }
+  .wealth-section .thumb-image {
+    height: 150px;
+  }
+
+  .team-member-card img {
+    height: 250px;
+  }
+  .contact-form-card {
+    padding: 30px;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  .hero-section p.lead {
+    font-size: 0.95rem;
+  }
+  .collaboration-section h2,
+  .wealth-section h2,
+  .cta-section h2,
+  .contact-page h2 {
+    font-size: 1.8rem;
+  }
+  .pathways-card {
+    padding: 30px;
+  }
+  .pathways-card i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+  .pathways-card h3 {
+    font-size: 1.4em;
+  }
+
+  .stats-section h3 {
+    font-size: 2.5em;
+  }
+  .stats-section p {
+    font-size: 0.8em;
+  }
+
+  .site-footer .social-icons {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .site-footer .contact-info-item {
+    justify-content: center;
+  }
+}
+
+/* --- Services Page Specific --- */
+.services-section .service-block:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.services-section .service-block {
+  border-top: 1px solid var(--border-color);
+}
+.service-icon {
+  font-size: 3em;
+  color: var(--primary-color);
+}
+.service-features li {
+  font-size: 1.1em;
+  margin-bottom: 12px;
+}
+.service-features li i {
+  margin-right: 15px;
+}
+.service-content .btn-custom-outline {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.service-content .btn-custom-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+[data-bs-theme="dark"] .service-content .btn-custom-outline {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+[data-bs-theme="dark"] .service-content .btn-custom-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* --- Case Studies Page Specific --- */
+.case-studies-list .case-study-block {
+  border-top: 1px solid var(--border-color);
+}
+.case-studies-list .case-study-block:first-child {
+  border-top: none; /* No border on the first item */
+}
+.case-study-hero-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.case-study-hero-link:hover {
+  transform: translateY(-5px) scale(1.01);
+}
+.case-study-hero {
+  position: relative;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-end; /* Align title to bottom */
+  justify-content: flex-start; /* Align title to left */
+  text-align: left;
+  overflow: hidden;
+  padding: 30px;
+}
+.case-study-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 50%
+  ); /* Gradient from bottom */
+}
+
+/* --- Case Studies Gallery - Aspect Ratio & Uniformity Fix --- */
+
+.gallery-image-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px; /* Apply rounding to the container */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    aspect-ratio: 4 / 3; /* The magic property! Creates a 4:3 box */
+    background-color: var(--border-color); /* Shows a placeholder color while image loads */
+}
+
+.gallery-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This crops the image to fit without stretching */
+    transition: transform 0.3s ease;
+}
+
+.gallery-image-wrapper:hover img {
+    transform: scale(1.05); /* Adds a subtle zoom effect on hover */
+}
+.case-study-title {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+/* Re-styling your "Project Process" to look like the "Project Details" design */
+.project-process-wrapper .project-process-title {
+    font-family: 'Inter', sans-serif; /* Use sans-serif font */
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none; /* Remove the bottom border */
+    padding-bottom: 0;
+    text-align: left; /* Align to the left */
+}
+.project-process-wrapper .project-process-title i {
+    display: none; /* Hide the chevron icon from the old design */
+}
+.process-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    height: 100%;
+}
+.process-card-number {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem; /* Adjusted font size */
+    min-width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+.process-card-title {
+    font-family: 'Inter', sans-serif; /* Use sans-serif font */
+    font-size: 0.9rem; /* Smaller size for the label */
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 3px;
+    display: block;
+    text-transform: none; /* Not uppercase */
+}
+.process-card-description {
+    font-family: 'Inter', sans-serif; /* Use sans-serif font */
+    font-size: 1rem; /* Larger size for the value */
+    color: var(--text-color);
+    margin-bottom: 0;
+    font-weight: 400; /* Regular weight */
+}
+
+/* --- Case Studies Single (Detail) Page --- */
+.project-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* --- Case Studies Single (Detail) Page Gallery --- */
+/* --- Case Studies Detail Page - Single Column Layout --- */
+
+.project-content {
+    max-width: 800px; /* Constrains text width for better readability */
+    margin: 0 auto;   /* Centers the text block */
+}
+.project-content p {
+    font-size: 1.1rem;
+    line-height: 1.8; /* More vertical spacing for text */
+}
+
+.project-gallery-wrapper {
+    border-top: 1px solid var(--border-color); /* Adds a nice visual separator */
+}
+
+.project-gallery-title {
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.project-gallery a {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 4 / 3; /* Creates a uniform 4:3 aspect ratio for all images */
+    background-color: var(--border-color); /* Placeholder color while images load */
+}
+
+.project-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops images to fit the 4:3 box without stretching */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-gallery a:hover img {
+    transform: scale(1.05); /* Adds a subtle zoom effect on hover */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Modal Responsiveness */
+.modal-image {
+    width: 100%;
+    height: auto;
+    max-height: 90vh; /* Ensures the modal image fits vertically on any screen */
+    object-fit: contain; /* Shows the full image inside the modal without cropping */
+    border-radius: 8px;
+}
+
+
+/* --- Rule for Dark Background Sections (Corrected) --- */
+.bg-dark-blue h1,
+.bg-dark-blue h2,
+.bg-dark-blue h3,
+.bg-dark-blue p,
+.bg-dark-blue .lead,
+.bg-dark-blue .display-1,
+.bg-dark-blue .display-2,
+.bg-dark-blue .display-3,
+.bg-dark-blue .display-4,
+.bg-dark-blue .display-5,
+.bg-dark-blue .display-6 {
+    color: white !important; /* Forces the color to always be white */
+}
+
+
+/* --- Case Studies Gallery - Fixed Height --- */
+.case-studies-list .g-4.mt-4 img {
+    height: 250px; /* You can change this value to your desired height */
+    width: 100%;
+    object-fit: cover; /* This prevents the image from stretching or distorting */
+}
+
+
+@media (max-width: 767.98px) {
+    .case-studies-list .g-4.mt-4 img {
+        height: 200px; /* A shorter height for mobile screens */
+    }
+}
+
+/* --- Modal Enhancements --- */
+
+/* Blurred Backdrop for Modals */
+.modal.show .modal-backdrop {
+    backdrop-filter: blur(8px); /* Blur effect for the background */
+    -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
+    background-color: rgba(0, 0, 0, 0.7); /* Darker, semi-transparent background */
+    opacity: 1; /* Ensure opacity is not overridden to make blur visible */
+}
+
+/* Ensure modal content is properly styled for the dark theme */
+#imageModal .modal-content {
+    background-color: rgba(0, 0, 0, 0.5) !important; /* Slightly transparent dark background for the modal image itself */
+    border: none; /* No border */
+}
+
+/* Modal header for close button */
+#imageModal .modal-header {
+    padding: 1rem 1rem 0 1rem; /* Padding for the close button */
+}
+
+/* --- CTA & Stats Section - Final Theme Fix --- */
+
+.cta-section {
+    background-color: var(--dark-blue); /* Guarantees dark background */
+}
+.cta-section h2,
+.cta-section .lead {
+    color: white; /* Forces the heading to always be white */
+}
+.cta-section .lead {
+    color: rgba(255, 255, 255, 0.8); /* A slightly dimmer white for the paragraph */
+}
+
+.stats-section {
+    background-color: var(--dark-blue); /* Guarantees dark background */
+}
+.stats-section h3 {
+    color: var(--primary-color); /* Forces the number to always be the gold color */
+}
+.stats-section p {
+    color: rgba(255, 255, 255, 0.6) !important; /* Forces the label to always be light gray */
+}

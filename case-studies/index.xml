@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Case Studies on Adventure Northen</title>
+    <link>http://localhost:1313/case-studies/</link>
+    <description>Recent content in Case Studies on Adventure Northen</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/case-studies/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lakeside Manor Revival</title>
+      <link>http://localhost:1313/case-studies/lakeside-manor-revival/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/case-studies/lakeside-manor-revival/</guid>
+      <description>&lt;p&gt;This project involved a meticulous restoration of a landmark Victorian property that had fallen into disrepair. Our primary goal was to honor the home&amp;rsquo;s historic soul while infusing it with modern amenities expected by today&amp;rsquo;s luxury market. We completely overhauled the foundation, replaced the slate roof, and restored the original gingerbread trim.&lt;/p&gt;&#xA;&lt;p&gt;Inside, the layout was reconfigured to create an open-concept kitchen and living area, perfect for entertaining. High-end appliances, custom cabinetry, and designer lighting were installed throughout. The property now stands as a testament to how historic preservation and modern luxury can coexist beautifully.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mountain View Estate Development</title>
+      <link>http://localhost:1313/case-studies/mountain-view-estate/</link>
+      <pubDate>Fri, 22 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/case-studies/mountain-view-estate/</guid>
+      <description>&lt;p&gt;The Mountain View Estate project was an ambitious undertaking from start to finish. We identified a rare opportunity to develop a collection of exclusive homes in a highly sought-after mountain location. The design philosophy was centered on &amp;lsquo;bringing the outside in,&amp;rsquo; with expansive glass walls and natural materials like stone and timber.&lt;/p&gt;&#xA;&lt;p&gt;Each residence was crafted with meticulous attention to detail, featuring smart home technology, gourmet kitchens, and spa-like bathrooms. The project not only delivered significant returns for our investors but also set a new benchmark for luxury mountain living in the region.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Coastal Haven Transformation</title>
+      <link>http://localhost:1313/case-studies/coastal-haven-transformation/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/case-studies/coastal-haven-transformation/</guid>
+      <description>&lt;p&gt;This project exemplifies our &amp;lsquo;buy to sell&amp;rsquo; strategy at its finest. We saw past the dated facade and recognized the incredible potential of this property&amp;rsquo;s location. The transformation was total. We removed interior walls to create a breathtaking open-plan living space that flows seamlessly to an outdoor deck with ocean views.&lt;/p&gt;&#xA;&lt;p&gt;Every detail, from the choice of paint colors to the hardware on the cabinets, was selected to appeal to the high-end coastal market. The result was a stunning, move-in-ready home that sold in a matter of days for well over the asking price.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
